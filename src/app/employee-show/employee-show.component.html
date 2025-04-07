@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 class="text-center mt-5 mb-3">Show Employee</h2>
+    <div class="card">
+      <div class="card-header">
+        <a class="btn btn-outline-info float-end" [routerLink]="['/dashboard']">View All Employees</a>
+      </div>
+      <div class="card-body">
+        <b class="text-muted">Name:</b>
+        <p>{{ employee.firstName + " " + employee.lastName }}</p>
+        <b class="text-muted">Email:</b>
+        <p>{{ employee.email }}</p>
+        <b class="text-muted">Position:</b>
+        <p>{{ employee.position }}</p>
+        <b class="text-muted">Salary:</b>
+        <p>{{ employee.salary | currency:'USD' }}</p>
+        <b class="text-muted">Department:</b>
+        <p>{{ employee.department }}</p>
+        <b class="text-muted">Joined Date:</b>
+        <p>{{ employee.dateOfJoining | date: 'shortDate' }}</p>
+        <b class="text-muted">Gender:</b>
+        <p>{{ employee.gender }}</p>
+      </div>
+    </div>
+  </div>
+  

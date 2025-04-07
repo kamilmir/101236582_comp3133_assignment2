@@ -1,0 +1,89 @@
+<div class="container">
+    <h2 class="text-center mt-5 mb-3">Create New Employee</h2>
+    <div class="card">
+      <div class="card-header">
+        <a class="btn btn-outline-info float-right" [routerLink]="['/dashboard']">
+          View All Employees
+        </a>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="employeeForm" (ngSubmit)="handleSave()">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              formControlName="firstName"
+              type="text"
+              class="form-control"
+              id="firstName"
+              placeholder="Enter first name" />
+          </div>
+  
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              formControlName="lastName"
+              type="text"
+              class="form-control"
+              id="lastName"
+              placeholder="Enter last name" />
+          </div>
+  
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              formControlName="email"
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email" />
+          </div>
+  
+          <div class="form-group">
+            <label for="position">Position</label>
+            <input
+              formControlName="position"
+              type="text"
+              class="form-control"
+              id="position"
+              placeholder="Enter position" />
+          </div>
+  
+          <div class="form-group">
+            <label for="salary">Salary</label>
+            <input
+              formControlName="salary"
+              type="number"
+              class="form-control"
+              id="salary"
+              placeholder="Enter salary" />
+          </div>
+  
+          <div class="form-group">
+            <label for="department">Department</label>
+            <input
+              formControlName="department"
+              type="text"
+              class="form-control"
+              id="department"
+              placeholder="Enter department" />
+          </div>
+  
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select formControlName="gender" class="form-control" id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+  
+          <button
+            [disabled]="isSaving"
+            type="submit"
+            class="btn btn-outline-primary mt-3">
+            Save Employee
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+<div class="container">
+    <h2 class="text-center mt-5 mb-3">Employee Management</h2>
+    <div class="card">
+      <div class="card-header">
+        <a class="btn btn-outline-primary" routerLink="/create">Create New Employee</a>
+        <button (click)="logout()" class="btn btn-outline-danger float-end">Logout</button>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Position</th>
+              <th>Salary ($)</th>
+              <th>Department</th>
+              <th>Date Joined</th>
+              <th>Gender</th>
+              <th width="240px">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of employeeList">
+              <td>{{ employee.firstName + ' ' + employee.lastName }}</td>
+              <td>{{ employee.email }}</td>
+              <td>{{ employee.position }}</td>
+              <td>{{ employee.salary }}</td>
+              <td>{{ employee.department }}</td>
+              <td>{{ employee.dateOfJoining | date: 'shortDate' }}</td>
+              <td>{{ employee.gender }}</td>
+              <td>
+                <a [routerLink]="['/show', employee.id]" class="btn btn-outline-info mx-1">Show</a>
+                <a [routerLink]="['/edit', employee.id]" class="btn btn-outline-success mx-1">Edit</a>
+                <button (click)="handleDelete(employee.id)" class="btn btn-outline-danger mx-1">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
